@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export const financesType = defineType({
   name: 'finances',
@@ -6,8 +6,18 @@ export const financesType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'name',
-      type: 'string',
+      name: 'income',
+      type: 'number',
+    }),
+    defineField({
+      name: 'tax',
+      type: 'number',
+    }),
+    defineField({
+      name: 'expences',  // The field that references multiple expences
+      type: 'array',
+      title: 'Expenses',
+      of: [{ type: 'reference', to: [{ type: 'expences' }] }],
     }),
   ],
 })
