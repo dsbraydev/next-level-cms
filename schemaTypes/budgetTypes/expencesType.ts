@@ -25,6 +25,5 @@ export const expencesType = defineType({
         ],
       },
     }),
-    
   ],
 })
