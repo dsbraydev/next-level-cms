@@ -14,7 +14,7 @@ export const financesType = defineType({
       type: 'number',
     }),
     defineField({
-      name: 'expences',  // The field that references multiple expences
+      name: 'expences',
       type: 'array',
       title: 'Expenses',
       of: [{ type: 'reference', to: [{ type: 'expences' }] }],
