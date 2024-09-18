@@ -1,4 +1,5 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
+
 
 export const financesType = defineType({
   name: 'finances',
@@ -8,16 +9,24 @@ export const financesType = defineType({
     defineField({
       name: 'income',
       type: 'number',
+      title: 'Income',
+    }),
+    defineField({
+      name: 'additionalIncome',
+      type: 'number',
+      title: 'additional Income',
     }),
     defineField({
       name: 'tax',
       type: 'number',
+      title: 'Tax',
     }),
     defineField({
-      name: 'expences',
+      name: 'expenses',
       type: 'array',
       title: 'Expenses',
-      of: [{ type: 'reference', to: [{ type: 'expences' }] }],
+      of: [{ type: 'reference', to: [{ type: 'expenses' }] }],
     }),
   ],
-})
+});
+

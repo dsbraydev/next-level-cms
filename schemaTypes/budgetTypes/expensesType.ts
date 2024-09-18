@@ -1,17 +1,19 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
-export const expencesType = defineType({
-  name: 'expences',
-  title: 'Expences',
+export const expensesType = defineType({
+  name: 'expenses', // Name must match how you're querying it
+  title: 'Expenses',
   type: 'document',
   fields: [
     defineField({
       name: 'name',
       type: 'string',
+      title: 'Expense Name',
     }),
     defineField({
       name: 'amount',
       type: 'number',
+      title: 'Amount',
     }),
     defineField({
       name: 'type',
@@ -20,10 +22,10 @@ export const expencesType = defineType({
       options: {
         list: [
           { title: 'Basic', value: 'basic' },
-          { title: 'Option 2', value: 'option2' },
-          { title: 'Option 3', value: 'option3' },
+          { title: 'Debt', value: 'debt' },
+          { title: 'Other', value: 'other' },
         ],
       },
     }),
   ],
-})
+});
